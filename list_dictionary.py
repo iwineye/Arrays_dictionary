@@ -47,14 +47,15 @@ evens = [x for x in range(10) if x % 2 == 0]
 * Sliding window, two-pointer techniques
 
 
+#Great! Let’s explore some **common DSA problems** that specifically involve **lists (arrays)**. These problems will help you hone your understanding of **list manipulations** and improve your problem-solving skills.
 
-1. Two Sum**
+### **1. Two Sum**
 
-
+#### Problem:
 
 #Given an array of integers `nums` and an integer `target`, return the indices of the two numbers such that they add up to `target`.
 
-Solution:
+#### Solution:
 
 #Use a dictionary to track the difference between `target` and the current number.
 
@@ -72,7 +73,7 @@ def two_sum(nums, target):
 #Time Complexity**: `O(n)`
 #**Space Complexity**: `O(n)`
 
-2. Maximum Subarray Sum (Kadane’s Algorithm)
+### **2. Maximum Subarray Sum (Kadane’s Algorithm)**
 
 #### Problem:
 
@@ -95,13 +96,13 @@ def max_subarray_sum(nums):
 
 
 
-3. Move Zeros to the End**
+### **3. Move Zeros to the End**
 
-Problem:
+#### Problem:
 
 #Given an array, move all zeros to the end without changing the order of non-zero elements.
 
-Solution:
+#### Solution:
 
 #Use the two-pointer technique to solve this problem in `O(n)` time.
 
@@ -113,19 +114,19 @@ def move_zeros_to_end(nums):
             non_zero_index += 1
     return nums
 
-#Time Complexity**: `O(n)`
-#Space Complexity**: `O(1)`
+#*Time Complexity**: `O(n)`
+#*Space Complexity**: `O(1)`
 
 
-# 4. Find Missing Number (1 to N)**
+### **4. Find Missing Number (1 to N)**
 
-# Problem:
+#### Problem:
 
-# Given a list containing `n` distinct numbers taken from the range `1` to `n+1`, find the one number that is missing from the list.
+#Given a list containing `n` distinct numbers taken from the range `1` to `n+1`, find the one number that is missing from the list.
 
-# Solution:
+#### Solution:
 
-# The sum of the first `n+1` numbers can be used to find the missing number.
+#The sum of the first `n+1` numbers can be used to find the missing number.
 
 
 def find_missing_number(nums):
@@ -145,7 +146,7 @@ def find_missing_number(nums):
 
 #Rotate an array to the right by `k` steps. This should be done in `O(n)` time.
 
-# Solution:
+#### Solution:
 
 #Use slicing to perform the rotation in `O(n)`.
 
@@ -154,10 +155,10 @@ def rotate_array(nums, k):
     k = k % len(nums)  # handle cases where k >= len(nums)
     return nums[-k:] + nums[:-k]
 
-#Time Complexity**: `O(n)`
-#Space Complexity**: `O(n)`
+#*Time Complexity**: `O(n)`
+#*Space Complexity**: `O(n)`
 
-
+---
 
 ### **6. Merge Intervals**
 
@@ -185,20 +186,20 @@ def merge_intervals(intervals):
     
     return merged
 
-#Time Complexity**: `O(n log n)` (due to sorting)
-#Space Complexity**: `O(n)`
+#**Time Complexity**: `O(n log n)` (due to sorting)
+#**Space Complexity**: `O(n)`
 
 
 
-# **7. Find Duplicate in Array**
+### **7. Find Duplicate in Array**
 
-# Problem:
+#### Problem:
 
-# Given an array `nums` containing `n+1` integers where each integer is between `1` and `n`, find the duplicate number.
+#Given an array `nums` containing `n+1` integers where each integer is between `1` and `n`, find the duplicate number.
 
-# Solution:
+#### Solution:
 
-# Use **Floyd’s Tortoise and Hare Algorithm** to detect cycles in the array, which helps find duplicates in `O(n)` time.
+#Use **Floyd’s Tortoise and Hare Algorithm** to detect cycles in the array, which helps find duplicates in `O(n)` time.
 
 
 def find_duplicate(nums):
