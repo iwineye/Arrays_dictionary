@@ -47,21 +47,19 @@ evens = [x for x in range(10) if x % 2 == 0]
 * Sliding window, two-pointer techniques
 
 
-Great! Let’s explore some **common DSA problems** that specifically involve **lists (arrays)**. These problems will help you hone your understanding of **list manipulations** and improve your problem-solving skills.
-
----
+#Great! Let’s explore some **common DSA problems** that specifically involve **lists (arrays)**. These problems will help you hone your understanding of **list manipulations** and improve your problem-solving skills.
 
 ### **1. Two Sum**
 
 #### Problem:
 
-Given an array of integers `nums` and an integer `target`, return the indices of the two numbers such that they add up to `target`.
+#Given an array of integers `nums` and an integer `target`, return the indices of the two numbers such that they add up to `target`.
 
 #### Solution:
 
-Use a dictionary to track the difference between `target` and the current number.
+#Use a dictionary to track the difference between `target` and the current number.
 
-```python
+
 def two_sum(nums, target):
     seen = {}
     for i, num in enumerate(nums):
@@ -70,48 +68,44 @@ def two_sum(nums, target):
             return [seen[complement], i]
         seen[num] = i
     return None
-```
 
-**Time Complexity**: `O(n)`
-**Space Complexity**: `O(n)`
 
----
+#Time Complexity**: `O(n)`
+#**Space Complexity**: `O(n)`
 
 ### **2. Maximum Subarray Sum (Kadane’s Algorithm)**
 
 #### Problem:
 
-Find the largest sum of any contiguous subarray in a given array.
+#Find the largest sum of any contiguous subarray in a given array.
 
 #### Solution:
 
-Kadane’s Algorithm uses dynamic programming to solve this in `O(n)` time.
+#Kadane’s Algorithm uses dynamic programming to solve this in `O(n)` time.
 
-```python
+
 def max_subarray_sum(nums):
     max_so_far = max_ending_here = nums[0]
     for num in nums[1:]:
         max_ending_here = max(num, max_ending_here + num)
         max_so_far = max(max_so_far, max_ending_here)
     return max_so_far
-```
 
-**Time Complexity**: `O(n)`
-**Space Complexity**: `O(1)`
+#Time Complexity**: `O(n)`
+#Space Complexity**: `O(1)`
 
----
+
 
 ### **3. Move Zeros to the End**
 
 #### Problem:
 
-Given an array, move all zeros to the end without changing the order of non-zero elements.
+#Given an array, move all zeros to the end without changing the order of non-zero elements.
 
 #### Solution:
 
-Use the two-pointer technique to solve this problem in `O(n)` time.
+#Use the two-pointer technique to solve this problem in `O(n)` time.
 
-```python
 def move_zeros_to_end(nums):
     non_zero_index = 0
     for i in range(len(nums)):
@@ -119,54 +113,50 @@ def move_zeros_to_end(nums):
             nums[non_zero_index], nums[i] = nums[i], nums[non_zero_index]
             non_zero_index += 1
     return nums
-```
 
-**Time Complexity**: `O(n)`
-**Space Complexity**: `O(1)`
+#*Time Complexity**: `O(n)`
+#*Space Complexity**: `O(1)`
 
----
 
 ### **4. Find Missing Number (1 to N)**
 
 #### Problem:
 
-Given a list containing `n` distinct numbers taken from the range `1` to `n+1`, find the one number that is missing from the list.
+#Given a list containing `n` distinct numbers taken from the range `1` to `n+1`, find the one number that is missing from the list.
 
 #### Solution:
 
-The sum of the first `n+1` numbers can be used to find the missing number.
+#The sum of the first `n+1` numbers can be used to find the missing number.
 
-```python
+
 def find_missing_number(nums):
     n = len(nums)
     expected_sum = (n + 1) * (n + 2) // 2
     actual_sum = sum(nums)
     return expected_sum - actual_sum
-```
 
-**Time Complexity**: `O(n)`
-**Space Complexity**: `O(1)`
+#*Time Complexity**: `O(n)`
+#*Space Complexity**: `O(1)`
 
----
+
 
 ### **5. Rotate Array (Left/Right)**
 
 #### Problem:
 
-Rotate an array to the right by `k` steps. This should be done in `O(n)` time.
+#Rotate an array to the right by `k` steps. This should be done in `O(n)` time.
 
 #### Solution:
 
-Use slicing to perform the rotation in `O(n)`.
+#Use slicing to perform the rotation in `O(n)`.
 
-```python
+
 def rotate_array(nums, k):
     k = k % len(nums)  # handle cases where k >= len(nums)
     return nums[-k:] + nums[:-k]
-```
 
-**Time Complexity**: `O(n)`
-**Space Complexity**: `O(n)`
+#*Time Complexity**: `O(n)`
+#*Space Complexity**: `O(n)`
 
 ---
 
@@ -174,13 +164,13 @@ def rotate_array(nums, k):
 
 #### Problem:
 
-Given a collection of intervals, merge all overlapping intervals.
+#Given a collection of intervals, merge all overlapping intervals.
 
 #### Solution:
 
-Sort the intervals and merge them when necessary.
+#Sort the intervals and merge them when necessary.
 
-```python
+
 def merge_intervals(intervals):
     if not intervals:
         return []
@@ -195,24 +185,23 @@ def merge_intervals(intervals):
             merged.append(interval)
     
     return merged
-```
 
-**Time Complexity**: `O(n log n)` (due to sorting)
-**Space Complexity**: `O(n)`
+#**Time Complexity**: `O(n log n)` (due to sorting)
+#**Space Complexity**: `O(n)`
 
----
+
 
 ### **7. Find Duplicate in Array**
 
 #### Problem:
 
-Given an array `nums` containing `n+1` integers where each integer is between `1` and `n`, find the duplicate number.
+#Given an array `nums` containing `n+1` integers where each integer is between `1` and `n`, find the duplicate number.
 
 #### Solution:
 
-Use **Floyd’s Tortoise and Hare Algorithm** to detect cycles in the array, which helps find duplicates in `O(n)` time.
+#Use **Floyd’s Tortoise and Hare Algorithm** to detect cycles in the array, which helps find duplicates in `O(n)` time.
 
-```python
+
 def find_duplicate(nums):
     slow = nums[0]
     fast = nums[0]
@@ -231,24 +220,22 @@ def find_duplicate(nums):
         fast = nums[fast]
     
     return slow
-```
 
-**Time Complexity**: `O(n)`
-**Space Complexity**: `O(1)`
+#**Time Complexity**: `O(n)`
+#**Space Complexity**: `O(1)`
 
----
+
 
 ### **8. Subarray Sum Equals K**
 
 #### Problem:
 
-Given an array `nums` and an integer `k`, find the total number of continuous subarrays whose sum equals `k`.
+#Given an array `nums` and an integer `k`, find the total number of continuous subarrays whose sum equals `k`.
 
 #### Solution:
 
-Use **prefix sums** and a **hashmap** to efficiently track the sums.
+#Use **prefix sums** and a **hashmap** to efficiently track the sums.
 
-```python
 from collections import defaultdict
 
 def subarray_sum(nums, k):
@@ -264,24 +251,24 @@ def subarray_sum(nums, k):
         prefix_sum[current_sum] += 1
     
     return result
-```
 
-**Time Complexity**: `O(n)`
-**Space Complexity**: `O(n)`
 
----
+#**Time Complexity**: `O(n)`
+#**Space Complexity**: `O(n)`
+
+
 
 ### **9. Product of Array Except Self**
 
 #### Problem:
 
-Given an array `nums`, return an array `output` such that `output[i]` is the product of all elements of `nums` except `nums[i]`.
+#Given an array `nums`, return an array `output` such that `output[i]` is the product of all elements of `nums` except `nums[i]`.
 
 #### Solution:
 
-Use two passes — one to calculate the product of elements before the current element and another for the product of elements after.
+#Use two passes — one to calculate the product of elements before the current element and another for the product of elements after.
 
-```python
+#```python
 def product_except_self(nums):
     n = len(nums)
     output = [1] * n
@@ -299,24 +286,20 @@ def product_except_self(nums):
         right *= nums[i]
     
     return output
-```
 
-**Time Complexity**: `O(n)`
-**Space Complexity**: `O(1)` (excluding the output array)
-
----
+#**Time Complexity**: `O(n)`
+#**Space Complexity**: `O(1)` (excluding the output array)
 
 ### **10. Longest Increasing Subsequence (LIS)**
 
 #### Problem:
 
-Given an unsorted array of integers, find the length of the longest increasing subsequence.
+#Given an unsorted array of integers, find the length of the longest increasing subsequence.
 
 #### Solution:
 
-Use dynamic programming with a time complexity of `O(n²)` or use binary search for an optimized solution with `O(n log n)`.
+#Use dynamic programming with a time complexity of `O(n²)` or use binary search for an optimized solution with `O(n log n)`.
 
-```python
 def length_of_lis(nums):
     if not nums:
         return 0
@@ -329,46 +312,44 @@ def length_of_lis(nums):
                 dp[i] = max(dp[i], dp[j] + 1)
     
     return max(dp)
-```
 
-**Time Complexity**: `O(n²)`
-**Space Complexity**: `O(n)`
 
----
+#**Time Complexity**: `O(n²)`
+#**Space Complexity**: `O(n)`
+
 
 ### **11. Find the "Kth" Largest Element**
 
 #### Problem:
 
-Given an unsorted array, find the `k`th largest element.
+#Given an unsorted array, find the `k`th largest element.
 
 #### Solution:
 
-Use the **Quickselect algorithm** or **heap** to efficiently find the `k`th largest element.
+#Use the **Quickselect algorithm** or **heap** to efficiently find the `k`th largest element.
 
-```python
+
 import heapq
 
 def find_kth_largest(nums, k):
     return heapq.nlargest(k, nums)[-1]
-```
 
-**Time Complexity**: `O(n log k)`
-**Space Complexity**: `O(k)`
+#**Time Complexity**: `O(n log k)`
+#**Space Complexity**: `O(k)`
 
----
+
 
 ### **12. Partition Equal Subset Sum**
 
 #### Problem:
 
-Given a set of positive integers, determine if the set can be partitioned into two subsets such that the sum of elements in both subsets is equal.
+#Given a set of positive integers, determine if the set can be partitioned into two subsets such that the sum of elements in both subsets is equal.
 
 #### Solution:
 
-This is a **subset sum problem**, which can be solved with dynamic programming.
+#This is a **subset sum problem**, which can be solved with dynamic programming.
 
-```python
+
 def can_partition(nums):
     total_sum = sum(nums)
     
@@ -384,16 +365,13 @@ def can_partition(nums):
             dp[j] = dp[j] or dp[j - num]
     
     return dp[target]
-```
 
-**Time Complexity**: `O(n * sum(nums))`
-**Space Complexity**: `O(sum(nums))`
+#*Time Complexity**: `O(n * sum(nums))`
+#**Space Complexity**: `O(sum(nums))`
 
----
 
-These problems will give you ample practice on **list manipulation** and **common algorithmic techniques**. Each of these is frequently asked in coding interviews, so mastering them will make you well-prepared for most scenarios!
-
-Would you like more explanations or variations of these problems?
+#These problems will give you ample practice on **list manipulation** and **common algorithmic techniques**. Each of these is frequently asked in coding interviews, so mastering them will make you well-prepared for most scenarios!
+#Would you like more explanations or variations of these problems?
 
 
 
@@ -427,18 +405,7 @@ squares = {x: x**2 for x in range(5)}   # {0: 0, 1: 1, 2: 4, ...}
 
 
 
-## TWO POINTER TECHNIQUE
 
-arr = [1, 2, 3, 4, 5]
-left, right = 0, len(arr) - 1
-while left < right:
-    # e.g., find a pair with sum
-    if arr[left] + arr[right] == 7:
-        break
-    elif arr[left] + arr[right] < 7:
-        left += 1
-    else:
-        right -= 1
 
 
 
